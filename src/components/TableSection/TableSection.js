@@ -6,7 +6,7 @@ export default (props) => {
     return (
         <section>
             <h2>Invoices</h2>
-            <Table headline={props.headline} data={props.data}/>
+            <Table headline={props.headline} data={props.data} onClickTr={props.onClickTr}/>
         </section>
     );
 }

@@ -1,10 +1,9 @@
 import React from 'react';
 import HeadLine from '../../components/HeadLine/HeadLine';
-import {createControl} from '../../form/form';
 import Input from '../../components/UI/Input/Input';
 import TextArea from '../../components/UI/TextArea/TeaxtArea';
 import Button from '../../components/UI/Button/Button';
-import {Link} from 'react-router-dom';
+import history from '../../history/history';
 import axios from '../../axios/axios';
 
 function makeid(length) {
@@ -24,11 +23,11 @@ function addData(data){
 class CreatePage extends React.Component{
 
     state = {
-        _id: '',
+        _id: makeid(24),
         date_created: '',
         date_supplied: '',
         comment: "",
-        number: 0
+        number: ""
     }
 
     onSubmit = (e) => {
@@ -36,19 +35,18 @@ class CreatePage extends React.Component{
     }
 
     onClick = () => {
-        this.setState({
-            _id: makeid(24)
-        })
 
-        addData(this.state);
+        if(this.formValidation){   
+            addData(this.state);
+            history.push('/');
+        }
 
-        this.setState({
-            _id: '',
-            date_created: '',
-            date_supplied: '',
-            comment: "",
-            number: 0
-        })
+    }
+
+    formValidation = () => {
+
+        return this.state.comment.length < 160 ? true : false;
+
     }
 
     render(){
@@ -56,11 +54,11 @@ class CreatePage extends React.Component{
             <main>
                 <HeadLine headline='Create Invoice'/>
                 <form onSubmit={this.onSubmit}>
-                    <Input type="number" required onChange={(event) => {this.setState({number: +event.target.value})}} label='Number:' value={this.state.number}/>
-                    <Input type="date" required onChange={(event) => {this.setState({date_created: event.target.value})}} label='Invoice Date:'/>
-                    <Input type="date" required onChange={(event) => {this.setState({date_supplied: event.target.value})}} label='Supply Date:'/>
-                    <TextArea onChange={(event) => {this.setState({comment: event.target.value})}}/>
-                    <Button onClick={this.onClick}><Link to="/">Save</Link></Button>
+                    <Input type="number" onChange={(event) => {this.setState({number: +event.target.value})}} label='Number:' value={this.state.number}/>
+                    <Input type="date" onChange={(event) => {this.setState({date_created: event.target.value})}} label='Invoice Date:' value={this.state.date_created}/>
+                    <Input type="date" onChange={(event) => {this.setState({date_supplied: event.target.value})}} label='Supply Date:' value={this.state.date_supplied}/>
+                    <TextArea onChange={(event) => {this.setState({comment: event.target.value})}} value={this.state.comment}/>
+                    <Button onClick={this.onClick} text='Save'/>
                 </form>
             </main>
             );

@@ -5,7 +5,7 @@ export default (props) => {
     return (
         <div>
             <label htmlFor={htmlFor}>{props.label}</label>
-            <input name={htmlFor} type={props.type} onChange={props.onChange} required/>
+            <input name={htmlFor} type={props.type} onChange={props.onChange} value={props.value} required/>
         </div>
     );
 }

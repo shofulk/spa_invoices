@@ -9,7 +9,7 @@ export default (props) => {
             <table>
                 <tbody>
                     <Tr headline={props.headline}/>
-                    {props.data.map((element, index) => {return(<Tr data={element} key={index*Math.random()}/>)})}
+                    {props.data.map((element, index) => {return(<Tr data={element} key={index*Math.random()} onClickTr={props.onClickTr}/>)})}
                 </tbody>
             </table>
         </div>
