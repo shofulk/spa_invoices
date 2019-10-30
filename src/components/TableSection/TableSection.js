@@ -4,7 +4,7 @@ import Table from '../UI/Table/Table';
 
 export default (props) => {
     return (
-        <section>
+        <section className={classes.TableSection}>
             <h2>Invoices</h2>
             <Table headline={props.headline} data={props.data} onClickTr={props.onClickTr}/>
         </section>

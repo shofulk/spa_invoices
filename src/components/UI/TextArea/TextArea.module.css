@@ -1,0 +1,19 @@
+.Div{
+    width: 80%;
+    padding: 10px 30px 10px 10px;
+}
+
+.TextArea{
+    width: 90%;
+    border-radius: 5px;
+    height: 100px;
+    font-size: 18px;
+    padding-left: 10px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.Label{
+    margin-left: 15px;
+}

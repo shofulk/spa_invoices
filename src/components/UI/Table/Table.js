@@ -6,7 +6,7 @@ export default (props) => {
     console.log(props)
     return (
         <div>
-            <table>
+            <table className={classes.Table}>
                 <tbody>
                     <Tr headline={props.headline}/>
                     {props.data.map((element, index) => {return(<Tr data={element} key={index*Math.random()} onClickTr={props.onClickTr}/>)})}

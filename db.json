@@ -79,28 +79,6 @@
       "date_supplied": "2016-06-05",
       "comment": "incididunt esse amet reprehenderit in exercitation in incididunt exercitation aliqua",
       "id": 10
-    },
-    {
-      "number": 67878,
-      "date_created": "2015-12-23",
-      "date_supplied": "2017-09-05",
-      "comment": " nisi qui dolore Lorem sint tempor veli",
-      "id": 11
-    },
-    {
-      "number": 123213,
-      "date_created": "2019-10-03",
-      "date_supplied": "2019-10-24",
-      "comment": "qw",
-      "id": 14
-    },
-    {
-      "_id": "0jzigump8mmx8vksky79nc2a",
-      "date_created": "2019-10-17",
-      "date_supplied": "2019-10-26",
-      "comment": "sdad",
-      "number": 12321,
-      "id": 15
     }
   ]
 }

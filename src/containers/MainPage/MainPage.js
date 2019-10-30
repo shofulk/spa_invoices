@@ -40,11 +40,11 @@ class MainPage extends React.Component{
     render(){
         console.log(this.state)
         return(
-            <div>
+            <main>
                 <HeadLine headline='Invoices'/>
                 <CreateButtonSection onClick={this.onClick}/>
                 {!this.state.loading ? <TableSection headline={this.state.headline} data={this.state.data} onClickTr={this.onClickTr}/> : <Loader/>}
-            </div>
+            </main>
         );
     }
 }

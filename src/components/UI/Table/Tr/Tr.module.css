@@ -1,0 +1,10 @@
+.Tr{
+    transition: background .3s linear;
+    border-bottom: 1px solid rgb(61, 208, 253);
+    border-collapse: collapse;
+}
+
+.Tr:hover{
+    background: rgb(179, 179, 179);
+    border: 1px solid rgb(179, 179, 179)
+}
